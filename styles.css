@@ -527,6 +527,50 @@ ul{ list-style:none; margin:0; padding:0; }
   .wp-samples{ grid-template-columns:1fr; }
 }
 
+/* --- graphic design gallery (masonry) --- */
+.graphic-gallery{
+  column-count: 2;
+  column-gap: 24px;
+  margin-top: 28px;
+}
+.graphic-gallery__item{
+  break-inside: avoid;
+  margin-bottom: 24px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-tiny);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.graphic-gallery__item:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-soft);
+}
+.graphic-gallery__item img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.graphic-gallery__caption{
+  padding: 14px 18px 18px;
+  background: var(--paper);
+}
+.graphic-gallery__caption h4{
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.graphic-gallery__caption p{
+  font-size: 0.78rem;
+  color: var(--slate-soft);
+  font-family: var(--font-mono);
+}
+@media (max-width: 700px){
+  .graphic-gallery{ column-count: 1; }
+}
+
 /* ============================================================
    SERVICES
 ============================================================ */
